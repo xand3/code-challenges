@@ -1,0 +1,1 @@
+SELECT CONCAT('Hello, ', p.name, ' how are you doing today?') as greeting FROM person p
