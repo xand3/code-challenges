@@ -9,3 +9,8 @@ function solution(str){
     return str.match(/(.{2})/g)
   }
 }
+
+// Split Strings with regular expressios
+function solutionRgx(s){
+  return (s+"_").match(/.{2}/g)||[]
+}
