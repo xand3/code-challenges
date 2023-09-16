@@ -10,7 +10,7 @@ function solution(str){
   }
 }
 
-// Split Strings with regular expressios
+// Split Strings with regular expressions
 function solutionRgx(s){
   return (s+"_").match(/.{2}/g)||[]
 }
