@@ -9,18 +9,14 @@ export function decipherThis(str: string): string {
       );
       const newString: string = firstLetter + word.match(/[a-zA-z]/g)?.join("");
 
+      const decipherWord: string = firstLetter + lastString(newString) + halfEndString(newString);
+
       if (Number(word) === firstLetter.charCodeAt(0)) return firstLetter;
-      if (newString.length <= 2) return firstLetter + newString[1];
-      else if (newString.length > 2)
-        return (
-          firstLetter +
-          lastString(newString) +
-          halfString(newString) +
-          newString[1]
-        );
+      if (newString.length === 2) return newString;
+      else if (newString.length > 2) return  decipherWord;
     })
     .join(" ");
 }
 
-const halfString = (str: string) => str.slice(2, str.length - 1);
+const halfEndString = (str: string) => str.slice(2, str.length - 1) + str[1];
 const lastString = (str: string) => str[str.length - 1];
